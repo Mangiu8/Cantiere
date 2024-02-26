@@ -1,0 +1,58 @@
+﻿@model Cantiere.Models.Pagamenti
+
+@{
+    ViewBag.Title = "Pagamenti";
+}
+
+<h2>Pagamenti</h2>
+
+<div>
+    <h4>Pagamenti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeriodoPagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PeriodoPagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ammontare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ammontare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stipendio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stipendio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Acconto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Acconto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
