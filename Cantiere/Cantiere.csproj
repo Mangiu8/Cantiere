@@ -178,10 +178,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CreateDipendenti.cshtml" />
     <Content Include="Views\Home\CreatePagamenti.cshtml" />
     <Content Include="Views\Home\Pagamenti.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\EditPagamenti.cshtml" />
+    <Content Include="Views\EditDipendenti\EditDipendenti.cshtml" />
+    <Content Include="Views\Home\UpdateDipendente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

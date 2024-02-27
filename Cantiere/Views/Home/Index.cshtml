@@ -7,8 +7,9 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateDipendenti")
 </p>
+<p>@Html.ActionLink("Go to Payment", "Pagamenti")</p>
 <table class="table">
     <tr>
         <th>
@@ -71,9 +72,8 @@
             @Html.DisplayFor(modelItem => item.IDPagamento)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "UpdateDipendente", new { id=item.IdDipendente  }) |
+            @Html.ActionLink("Delete", "DeleteDipendenti", new { id=item.IdDipendente  })
         </td>
     </tr>
 }
