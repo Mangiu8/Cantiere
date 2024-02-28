@@ -91,17 +91,12 @@ namespace Cantiere.Controllers
             return View();
         }
 
-        public ActionResult GetDipendente()
-        {
-            return View();
-        }
-
         [HttpGet]
-        public ActionResult GetDipendente(int id)
+        public ActionResult UpdateDipendente(int id)
         {
-            Dipendenti dipendente = null;
             string connectionString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connectionString);
+            Dipendenti dipendente = new Dipendenti();
             try
             {
                 conn.Open();
@@ -109,9 +104,8 @@ namespace Cantiere.Controllers
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@IdDipendente", id);
                 SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
-                    dipendente = new Dipendenti();
                     dipendente.IdDipendente = reader.GetInt32(0);
                     dipendente.Nome = reader.GetString(1);
                     dipendente.Cognome = reader.GetString(2);
@@ -133,15 +127,9 @@ namespace Cantiere.Controllers
             return View(dipendente);
         }
 
-        public ActionResult UpdateDipendente()
-        {
-            return View();
-        }
-
-        [HttpPut]
+        [HttpPost]
         public ActionResult UpdateDipendente(Dipendenti dipendente)
         {
-            GetDipendente(dipendente.IdDipendente);
             string connectionString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connectionString);
             try
